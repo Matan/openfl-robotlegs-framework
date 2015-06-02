@@ -7,6 +7,8 @@
 
 package robotlegs.bender.extensions.commandCenter.dsl;
 
+import robotlegs.bender.extensions.commandCenter.api.ICommand;
+
 /**
  * @private
  */
@@ -17,5 +19,5 @@ interface ICommandMapper
 	 * @param commandClass The Command Class<Dynamic> to map
 	 * @return Mapping configurator
 	 */
-	function toCommand(commandClass:Class<Dynamic>):ICommandConfigurator;
+	function toCommand(commandClass:Class<ICommand>):ICommandConfigurator;
 }

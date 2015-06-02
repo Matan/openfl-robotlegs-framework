@@ -7,6 +7,7 @@
 
 package robotlegs.bender.extensions.commandCenter.impl;
 
+import robotlegs.bender.extensions.commandCenter.api.ICommand;
 import robotlegs.bender.extensions.commandCenter.api.ICommandMapping;
 
 /**
@@ -21,12 +22,12 @@ class CommandMapping implements ICommandMapping
 	/* Public Properties                                                          */
 	/*============================================================================*/
 
-	private var _commandClass:Class<Dynamic>;
-	public var commandClass(get, null):Class<Dynamic>;
+	private var _commandClass:Class<ICommand>;
+	public var commandClass(get, null):Class<ICommand>;
 	/**
 	 * @inheritDoc
 	 */
-	public function get_commandClass():Class<Dynamic>
+	public function get_commandClass():Class<ICommand>
 	{
 		return _commandClass;
 	}
@@ -89,7 +90,7 @@ class CommandMapping implements ICommandMapping
 	 * Creates a Command Mapping
 	 * @param commandClass The concrete Command class
 	 */
-	public function new(commandClass:Class<Dynamic>)
+	public function new(commandClass:Class<ICommand>)
 	{
 		_commandClass = commandClass;
 	}

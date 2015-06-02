@@ -7,6 +7,7 @@
 
 package robotlegs.bender.extensions.directCommandMap.impl;
 
+import robotlegs.bender.extensions.commandCenter.api.ICommand;
 import robotlegs.bender.extensions.commandCenter.api.ICommandExecutor;
 import robotlegs.bender.extensions.commandCenter.impl.CommandExecutor;
 import robotlegs.bender.extensions.commandCenter.impl.CommandMappingList;
@@ -63,7 +64,7 @@ class DirectCommandMap implements IDirectCommandMap
 	/**
 	 * @inheritDoc
 	 */
-	public function map(commandClass:Class<Dynamic>):IDirectCommandConfigurator
+	public function map(commandClass:Class<ICommand>):IDirectCommandConfigurator
 	{
 		return new DirectCommandMapper(_executor, _mappings, commandClass);
 	}

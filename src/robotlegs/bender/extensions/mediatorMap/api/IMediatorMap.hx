@@ -45,7 +45,7 @@ interface IMediatorMap
 	 * @param type The class or interface to be matched against.
 	 * @return the unmapper so that you can continue the unmapping.
 	 */
-	function unmap(type:Class<Dynamic>):IMediatorUnmapper;
+	function unmap(type:Class<IMediator>):IMediatorUnmapper;
 
 	/**
 	 * Mediates an item directly. If the item matches any mapped matchers or types then it will be mediated according to those mappings.

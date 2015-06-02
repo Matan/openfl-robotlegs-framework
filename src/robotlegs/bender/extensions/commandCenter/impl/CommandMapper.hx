@@ -7,6 +7,7 @@
 
 package robotlegs.bender.extensions.commandCenter.impl;
 
+import robotlegs.bender.extensions.commandCenter.api.ICommand;
 import robotlegs.bender.extensions.commandCenter.api.ICommandMapping;
 import robotlegs.bender.extensions.commandCenter.api.ICommandMappingList;
 import robotlegs.bender.extensions.commandCenter.dsl.ICommandConfigurator;
@@ -49,7 +50,7 @@ class CommandMapper implements ICommandMapper implements ICommandUnmapper implem
 	/**
 	 * @inheritDoc
 	 */
-	public function toCommand(commandClass:Class<Dynamic>):ICommandConfigurator
+	public function toCommand(commandClass:Class<ICommand>):ICommandConfigurator
 	{
 		_mapping = new CommandMapping(commandClass);
 		_mappings.addMapping(_mapping);
@@ -59,7 +60,7 @@ class CommandMapper implements ICommandMapper implements ICommandUnmapper implem
 	/**
 	 * @inheritDoc
 	 */
-	public function fromCommand(commandClass:Class<Dynamic>):Void
+	public function fromCommand(commandClass:Class<ICommand>):Void
 	{
 		_mappings.removeMappingFor(commandClass);
 	}

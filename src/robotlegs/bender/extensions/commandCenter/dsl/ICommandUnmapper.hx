@@ -7,6 +7,8 @@
 
 package robotlegs.bender.extensions.commandCenter.dsl;
 
+import robotlegs.bender.extensions.commandCenter.api.ICommand;
+
 /**
  * @private
  */
@@ -16,7 +18,7 @@ interface ICommandUnmapper
 	 * Unmaps a Command
 	 * @param commandClass Command to unmap
 	 */
-	function fromCommand(commandClass:Class<Dynamic>):Void;
+	function fromCommand(commandClass:Class<ICommand>):Void;
 
 	/**
 	 * Unmaps all commands from this trigger
