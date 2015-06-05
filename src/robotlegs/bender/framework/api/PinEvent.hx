@@ -28,7 +28,6 @@ class PinEvent extends Event
 	/* Public Properties                                                          */
 	/*============================================================================*/
 
-	private var _instance:Dynamic;
 	public var instance(default, null):Dynamic;
 	/**
 	 * The instance being detained or released
@@ -50,7 +49,7 @@ class PinEvent extends Event
 	public function new(type:String, instance:Dynamic)
 	{
 		super(type);
-		_instance = instance;
+		this.instance = instance;
 	}
 
 	/*============================================================================*/
@@ -62,6 +61,6 @@ class PinEvent extends Event
 	 */
 	override public function clone():Event
 	{
-		return new PinEvent(type, _instance);
+		return new PinEvent(type, instance);
 	}
 }
