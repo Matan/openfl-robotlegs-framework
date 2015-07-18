@@ -7,6 +7,7 @@
 
 package robotlegs.bender.framework.impl;
 
+import haxe.ds.ObjectMap;
 import openfl.events.IEventDispatcher;
 import robotlegs.bender.framework.api.PinEvent;
 
@@ -23,7 +24,7 @@ class Pin
 	/* Private Properties                                                         */
 	/*============================================================================*/
 
-	private var _instances = new Map<String, Dynamic>();
+	private var _instances = new ObjectMap<Dynamic, Bool>();
 
 	private var _dispatcher:IEventDispatcher;
 
@@ -49,9 +50,9 @@ class Pin
 	 */
 	public function detain(instance:Dynamic):Void
 	{
-		if (_instances[instance] == null)
+		if (_instances.get(instance) != true)
 		{
-			_instances[instance] = true;
+			_instances.set(instance, true);
 			_dispatcher.dispatchEvent(new PinEvent(PinEvent.DETAIN, instance));
 		}
 	}
@@ -62,7 +63,7 @@ class Pin
 	 */
 	public function release(instance:Dynamic):Void
 	{
-		if (_instances[instance])
+		if (_instances.get(instance))
 		{
 			_instances.remove(instance);
 			_dispatcher.dispatchEvent(new PinEvent(PinEvent.RELEASE, instance));

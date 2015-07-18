@@ -428,10 +428,7 @@ class Context extends EventDispatcher implements IContext
 	 */
 	public function detain(instance:Dynamic):IContext
 	{
-		//for each (var instance:Dynamic in instances)
-		//{
-			_pin.detain(instance);
-		//}
+		_pin.detain(instance);
 		return this;
 	}
 
@@ -440,10 +437,7 @@ class Context extends EventDispatcher implements IContext
 	 */
 	public function release(instance:Dynamic):IContext
 	{
-		//for each (var instance:Dynamic in instances)
-		//{
-			_pin.release(instance);
-		//}
+		_pin.release(instance);
 		return this;
 	}
 

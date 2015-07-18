@@ -134,14 +134,14 @@ interface IContext extends IEventDispatcher
 	 * @param instances Instances to pin
 	 * @return this
 	 */
-	function detain(instances:Array<Dynamic>):IContext;
+	function detain(instance:Dynamic):IContext;
 
 	/**
 	 * Unpins instances from memory
 	 * @param instances Instances to unpin
 	 * @return this
 	 */
-	function release(instances:Array<Dynamic>):IContext;
+	function release(instance:Dynamic):IContext;
 
 	/**
 	 * Initializes this context
