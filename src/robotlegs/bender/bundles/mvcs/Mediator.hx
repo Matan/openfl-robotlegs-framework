@@ -19,7 +19,6 @@ import robotlegs.bender.extensions.mediatorMap.api.IMediator;
  */
 
 @:keepSub
-@:rtti
 class Mediator implements IMediator
 {
 

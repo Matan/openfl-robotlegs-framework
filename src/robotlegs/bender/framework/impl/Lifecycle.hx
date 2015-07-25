@@ -119,7 +119,7 @@ class Lifecycle implements ILifecycle
 
 	private var _reversedEventTypes = new Map<String,Dynamic>();
 
-	private var _reversePriority:Int;
+	private var _reversePriority:Int = 0;
 
 	private var _initialize:LifecycleTransition;
 
@@ -398,14 +398,14 @@ class Lifecycle implements ILifecycle
 	private function createSyncLifecycleListener(handler:Dynamic, once:Bool = false):Dynamic
 	{
 		// When and After handlers can not be asynchronous
-		if (handler.length > 1)
+		if (haxe.MethodUtil.numArgs(handler) > 1)
 		{
 			throw new LifecycleError(LifecycleError.SYNC_HANDLER_ARG_MISMATCH);
 		}
-		
+
 		// CHECK
 		var syncLifecycleListener:SyncLifecycleListener = new SyncLifecycleListener();
-		return syncLifecycleListener.init(handler, once, handler.length);
+		return syncLifecycleListener.init(handler, once, haxe.MethodUtil.numArgs(handler));
 		
 		// A handler that accepts 1 argument is provided with the event type
 		/*if (handler.length == 1)

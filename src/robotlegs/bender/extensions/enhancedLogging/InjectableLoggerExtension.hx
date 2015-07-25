@@ -24,6 +24,9 @@ import robotlegs.bender.framework.api.ILogger;
 @:keepSub
 class InjectableLoggerExtension implements IExtension
 {
+	public function new()
+	{
+	}
 
 	/*============================================================================*/
 	/* Public Functions                                                           */

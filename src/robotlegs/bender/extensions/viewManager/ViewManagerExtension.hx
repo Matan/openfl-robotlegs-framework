@@ -21,6 +21,9 @@ import robotlegs.bender.framework.api.IInjector;
 @:keepSub
 class ViewManagerExtension implements IExtension
 {
+	public function new()
+	{
+	}
 
 	/*============================================================================*/
 	/* Private Static Properties                                                  */

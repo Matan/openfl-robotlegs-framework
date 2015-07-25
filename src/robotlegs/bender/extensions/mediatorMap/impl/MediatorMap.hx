@@ -23,7 +23,6 @@ import robotlegs.bender.framework.api.ILogger;
  */
 
 @:keepSub
-@:rtti
 class MediatorMap implements IMediatorMap implements IViewHandler
 {
 

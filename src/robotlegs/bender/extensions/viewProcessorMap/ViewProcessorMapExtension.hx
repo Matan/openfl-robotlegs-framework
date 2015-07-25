@@ -23,6 +23,9 @@ import robotlegs.bender.framework.api.IInjector;
 @:keepSub
 class ViewProcessorMapExtension implements IExtension
 {
+	public function new()
+	{
+	}
 
 	/*============================================================================*/
 	/* Private Properties                                                         */

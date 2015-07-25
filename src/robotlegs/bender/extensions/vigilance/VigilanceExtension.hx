@@ -25,8 +25,8 @@ class VigilanceExtension implements IExtension implements ILogTarget
 {
 	public function new()
 	{
-		
 	}
+
 	/*============================================================================*/
 	/* Private Properties                                                         */
 	/*============================================================================*/
@@ -69,7 +69,6 @@ class VigilanceExtension implements IExtension implements ILogTarget
 	}
 }
 @:keepSub
-@:rtti
 class MetadataChecker
 {
 	//[Inject(optional=true)]

@@ -7,7 +7,7 @@
 
 package robotlegs.bender.framework.impl;
 
-
+import robotlegs.bender.framework.api.IExtension;
 import org.swiftsuspenders.utils.CallProxy;
 import org.swiftsuspenders.utils.UID;
 import robotlegs.bender.framework.api.IBundle;
@@ -71,13 +71,9 @@ class ExtensionInstaller
 			}
 			_logger.debug("Installing extension {0}", [id]);
 			_classes[id] = true;
-			
-			var hasExtendField = CallProxy.hasField(extension, "extend");
-			
-			if (hasExtendField == true) {
-				
-				extension.extend(_context);
-			}
+
+			if(Std.is(extension, IExtension))
+				cast(extension, IExtension).extend(_context);
 		}
 	}
 

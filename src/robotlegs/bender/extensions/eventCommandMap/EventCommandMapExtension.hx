@@ -19,6 +19,9 @@ import robotlegs.bender.framework.api.IExtension;
 @:keepSub
 class EventCommandMapExtension implements IExtension
 {
+	public function new()
+	{
+	}
 
 	/*============================================================================*/
 	/* Public Functions                                                           */

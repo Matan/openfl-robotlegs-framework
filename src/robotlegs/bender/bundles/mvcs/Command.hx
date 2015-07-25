@@ -17,7 +17,6 @@ import robotlegs.bender.extensions.commandCenter.api.ICommand;
  */
 
 @:keepSub
-@:rtti
 class Command implements ICommand
 {
 

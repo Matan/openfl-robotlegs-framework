@@ -21,6 +21,9 @@ import robotlegs.bender.framework.api.ILogger;
 @:keepSub
 class StageObserverExtension implements IExtension
 {
+	public function new()
+	{
+	}
 
 	/*============================================================================*/
 	/* Private Static Properties                                                  */

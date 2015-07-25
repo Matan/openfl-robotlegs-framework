@@ -20,7 +20,6 @@ import robotlegs.bender.framework.api.IExtension;
 @:keepSub
 class EventDispatcherExtension implements IExtension
 {
-
 	/*============================================================================*/
 	/* Private Properties                                                         */
 	/*============================================================================*/

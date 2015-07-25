@@ -23,6 +23,9 @@ import robotlegs.bender.framework.api.ILogger;
 @:keepSub
 class ContextViewExtension implements IExtension
 {
+	public function new()
+	{
+	}
 
 	/*============================================================================*/
 	/* Private Properties                                                         */

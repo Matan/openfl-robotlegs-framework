@@ -20,7 +20,6 @@ import robotlegs.bender.extensions.viewProcessorMap.dsl.IViewProcessorUnmapper;
  * View Processor Map implementation
  * @private
  */
-@:rtti
 @:keepSub
 class ViewProcessorMap implements IViewProcessorMap implements IViewHandler
 {

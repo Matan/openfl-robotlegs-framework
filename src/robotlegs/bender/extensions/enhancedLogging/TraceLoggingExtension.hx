@@ -19,6 +19,10 @@ import robotlegs.bender.framework.api.IExtension;
 class TraceLoggingExtension implements IExtension
 {
 
+	public function new()
+	{
+	}
+
 	/*============================================================================*/
 	/* Public Functions                                                           */
 	/*============================================================================*/

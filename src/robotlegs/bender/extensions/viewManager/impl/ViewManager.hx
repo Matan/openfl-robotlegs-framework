@@ -20,7 +20,6 @@ import robotlegs.bender.extensions.viewManager.api.IViewManager;
 /**
  * @private
  */
-@:rtti
 @:keepSub
 class ViewManager extends EventDispatcher implements IViewManager
 {

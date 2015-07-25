@@ -28,6 +28,9 @@ import robotlegs.bender.framework.api.ILogger;
 @:keepSub
 class StageCrawlerExtension implements IExtension
 {
+	public function new()
+	{
+	}
 
 	/*============================================================================*/
 	/* Private Properties                                                         */

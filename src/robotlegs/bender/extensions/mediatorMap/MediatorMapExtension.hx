@@ -21,6 +21,9 @@ import robotlegs.bender.framework.api.IInjector;
 @:keepSub
 class MediatorMapExtension implements IExtension
 {
+	public function new()
+	{
+	}
 
 	/*============================================================================*/
 	/* Private Properties                                                         */

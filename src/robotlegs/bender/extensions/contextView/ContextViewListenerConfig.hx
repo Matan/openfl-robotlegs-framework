@@ -18,7 +18,6 @@ import robotlegs.bender.framework.api.IConfig;
  */
 
 @:keepSub
-@:rtti
 class ContextViewListenerConfig implements IConfig
 {
 

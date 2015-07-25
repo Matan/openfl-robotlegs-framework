@@ -9,7 +9,7 @@ package robotlegs.bender.framework.impl;
 import openfl.errors.Error;
 
 @:keepSub
-class SafelyCallBack 
+class SafelyCallBack
 {
 	/*============================================================================*/
 	/* Public Functions                                                           */
@@ -36,64 +36,21 @@ class SafelyCallBack
 	 * @param message An optional message
 	 */
 
-	public static function call(callback:Dynamic, errorMsg:Dynamic = null, message:Dynamic = null)
+	public static function call(callback : Dynamic, error : Dynamic = null, message : Dynamic = null)
 	{
-		#if (js || cpp)
-			callback(errorMsg, message);
-		/*#elseif cpp
-			trace("callback = " + callback);
-			trace("errorMsg = " + errorMsg);
-			trace("message = " + message);
-			callback(errorMsg, message);*/
-		#else 
-			if (message != null) {
-				try {
-					callback(errorMsg, message);
-				}
-				catch( error : Error ) {
-					try {
-						callback(errorMsg);
-					}
-					catch( error2 : Error ) {
-						try {
-							callback();
-						}
-						catch( error3 : Error ) {
-							trace("Error calling CallBack : " + error3 );
-						}
-					}
-				}
-			}
-			else if (errorMsg != null) {
-				try {
-					callback(errorMsg);
-				}
-				catch( error2 : Error ) {
-					try {
-						callback();
-					}
-					catch( error3 : Error ) {
-						trace("Error calling CallBack : " + error3 );
-					}
-				}
-			}
-			
-			try {
-				callback(errorMsg, message);
-			}
-			catch( error : Error ) {
-				try {
-					callback(errorMsg);
-				}
-				catch( error2 : Error ) {
-					try {
-						callback();
-					}
-					catch( error3 : Error ) {
-						trace("Error calling CallBack : " + error3 );
-					}
-				}
-			}
-		#end
+		var numArgs : Int = haxe.MethodUtil.numArgs(callback);
+
+		if(numArgs == 0)
+		{
+			callback();
+		}
+		else if(numArgs == 1)
+		{
+			callback(error);
+		}
+		else
+		{
+			callback(error, message);
+		}
 	}
 }

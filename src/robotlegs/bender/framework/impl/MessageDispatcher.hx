@@ -114,7 +114,7 @@ class MessageRunner
 
 	private var _handlers:Array<Dynamic>;
 
-	private var _callback:Void->Void;
+	private var _callback:Dynamic;
 
 	/*============================================================================*/
 	/* Constructor                                                                */
@@ -123,7 +123,7 @@ class MessageRunner
 	/**
 	 * @private
 	 */
-	public function new(message:Dynamic, handlers:Array<Dynamic>, callback:Void->Void)
+	public function new(message:Dynamic, handlers:Array<Dynamic>, callback:Dynamic)
 	{
 		_message = message;
 		_handlers = handlers;
@@ -156,18 +156,17 @@ class MessageRunner
 		
 		while ((handler = _handlers.pop()) != null)
 		{
-			if (handler.length == null) { // cpp can't read .length (will need to create a FIX for this)
-				handler();
-			}
-			else if (handler.length == 0) // sync handler: ()
+			var numArgs : Int = haxe.MethodUtil.numArgs(handler);
+
+			if (numArgs == 0) // sync handler: ()
 			{
 				handler();
 			}
-			else if (handler.length == 1) // sync handler: (message)
+			else if (numArgs == 1) // sync handler: (message)
 			{
 				handler(_message);
 			}
-			else if (handler.length == 2) // sync or async handler: (message, callback)
+			else if (numArgs == 2) // sync or async handler: (message, callback)
 			{
 				var handled:Bool = false;
 				handler(_message, function(error:Dynamic = null, msg:Dynamic = null):Void

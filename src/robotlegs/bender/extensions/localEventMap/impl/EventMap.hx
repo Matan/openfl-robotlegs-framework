@@ -16,7 +16,6 @@ import robotlegs.bender.extensions.localEventMap.api.IEventMap;
  */
 
 @:keepSub
-@:rtti
 class EventMap implements IEventMap
 {
 

@@ -21,7 +21,6 @@ import robotlegs.bender.framework.api.ILogger;
  */
 
 @:keepSub
-@:rtti
 class EventCommandMap implements IEventCommandMap
 {
 
