@@ -26,9 +26,9 @@ class CommandTriggerMap
 
 	private var _triggers = new Map<String,Dynamic>();
 
-	private var _keyFactory:String -> Class<Dynamic> -> String;
+	private var _keyFactory:Dynamic;
 
-	private var _triggerFactory:String -> Class<Dynamic> -> EventCommandTrigger;
+	private var _triggerFactory:Dynamic;
 
 	/*============================================================================*/
 	/* Constructor                                                                */
